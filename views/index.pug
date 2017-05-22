@@ -1,0 +1,30 @@
+html
+  head
+    title LOGIN :: VPN
+    link(rel='stylesheet', type='text/css', href='/normalize.css')
+    link(rel='stylesheet', type='text/css', href='/skeleton.css')
+    link(rel='stylesheet', type='text/css', href='/main.css')
+  body
+    .parent
+      .container
+        .row
+          .twelve.columns
+            h1 VPN Certificate Platform
+            if error
+              .alert.alert-warning!= error
+        .row
+          .nine.columns
+            label(for='pass') Your unique passcode:
+            input#pass.main-input.u-full-width(type='text', placeholder="fancy_squirrel")
+          .three.columns
+            label(for='button') &nbsp;
+            button#button.button-primary.main-button(onclick='enter_id()') Login
+      script.
+        document.getElementById('pass').addEventListener('keydown', function (e) {
+          if (e.keyCode === 13) {
+            enter_id()
+          }
+        })
+        function enter_id() {
+          location.href = "/" + document.getElementById('pass').value
+        }

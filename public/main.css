@@ -1,0 +1,52 @@
+.main-input {
+  width: 100%;
+}
+
+.main-button {
+  width: 100%;
+}
+
+.parent {
+  position: relative;
+  height: 100%;
+}
+
+.container {
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.alert {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d0e9c6;
+}
+
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bcdff1;
+}
+
+.alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faf2cc;
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebcccc;
+}
+
+.no-decoration {
+  text-decoration: none;
+}

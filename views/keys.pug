@@ -1,0 +1,36 @@
+html
+  head
+    title= `${name} :: VPN`
+    link(rel='stylesheet', type='text/css', href='/normalize.css')
+    link(rel='stylesheet', type='text/css', href='/skeleton.css')
+    link(rel='stylesheet', type='text/css', href='/main.css')
+  body
+    .parent
+      .container
+        .row
+          h4= `Hello, ${name}, you have ${fileList.length} key(s):`
+        .row
+          table.u-full-width
+            thead
+              tr
+                th Certificate Name
+                th Creation Date
+                th Enabled
+            tbody
+              for item in fileList
+                tr
+                  td #[a.no-decoration(href=`/${name}/${item.name}`)= `${item.name}`]
+                  td= `${item.date}`
+                  td Yes!
+        .row
+          h5 You can also #[a(href=`/create/${name}`) create] new certificates.
+
+      script.
+        document.getElementById('pass').addEventListener('keydown', function (e) {
+          if (e.keyCode === 13) {
+            enter_id()
+          }
+        })
+        function enter_id() {
+          location.href = "/" + document.getElementById('pass').value
+        }

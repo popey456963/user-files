@@ -1,0 +1,29 @@
+html
+  head
+    title CREATE :: VPN
+    link(rel='stylesheet', type='text/css', href='/normalize.css')
+    link(rel='stylesheet', type='text/css', href='/skeleton.css')
+    link(rel='stylesheet', type='text/css', href='/main.css')
+  body
+    .parent
+      .container
+        .row
+          h4= "Create a new VPN Certificate"
+          if error
+            .alert.alert-danger!= error
+        .row
+          .nine.columns
+            label(for='name') Certificate identifier:
+            input#name.main-input.u-full-width(type='text', placeholder="my_laptop")
+          .three.columns
+            label(for='button') &nbsp;
+            button#button.button-primary.main-button(onclick='create_vpn()') Create
+    script.
+      document.getElementById('name').addEventListener('keydown', function (e) {
+        if (e.keyCode === 13) {
+          create_vpn()
+        }
+      })
+      function create_vpn() {
+        location.href = '/create/' + location.pathname.split('/')[2] + '/' + document.getElementById('name').value
+      }
